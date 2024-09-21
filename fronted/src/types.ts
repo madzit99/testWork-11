@@ -52,3 +52,8 @@ export interface Item {
   image: string;
   price: number;
 }
+
+export interface Category {
+  _id: string;
+  title: string;
+}

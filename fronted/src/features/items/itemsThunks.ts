@@ -17,3 +17,13 @@ export const fetchOneItem = createAsyncThunk<Item, string>(
     return response.data;
   }
 );
+
+export const fetchByCategory = createAsyncThunk<Item[], string>(
+  "items/fetchByCategory",
+  async (categoryId: string) => {
+    const response = await axiosApi.get<Item[]>(
+      `/items/category/${categoryId}`
+    );
+    return response.data;
+  }
+);
