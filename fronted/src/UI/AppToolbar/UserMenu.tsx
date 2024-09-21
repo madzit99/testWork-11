@@ -37,12 +37,12 @@ const UserMenu: React.FC<Props> = ({ user }) => {
   return (
     <Grid item>
       <Button onClick={handleClick} color="inherit">
-        Привет,  {user.displayName} 
+        Привет, {user.displayName}
       </Button>
       <Menu open={isOpen} anchorEl={anchorEl} onClose={handleClose} keepMounted>
         <MenuItem>
           <Typography>
-            <Link to="/addNew">Создать новый товар</Link>
+            <Link to="/create">Создать новый товар</Link>
           </Typography>
         </MenuItem>
         <MenuItem onClick={handleLogout}>Выйти</MenuItem>
