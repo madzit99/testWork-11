@@ -5,7 +5,7 @@ export interface UserFields {
   password: string;
   token: string;
   __confirmPassword: string;
-  displauName: string;
+  displayName: string;
   phoneNumber: number,
 }
 

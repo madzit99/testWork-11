@@ -35,7 +35,7 @@ const UserSchema = new Schema<
       type: String,
       required: true,
     },
-    displauName: {
+    displayName: {
       type: String,
       required: true,
     },

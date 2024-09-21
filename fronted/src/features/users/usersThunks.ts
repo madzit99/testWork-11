@@ -3,6 +3,7 @@ import {
   GlobalError,
   LoginMutation,
   RegisterMutation,
+  RegisterResponse,
   User,
   ValidationError,
 } from "../../types";
@@ -29,16 +30,16 @@ export const register = createAsyncThunk<
   }
 });
 export const login = createAsyncThunk<
-  User,
+  RegisterResponse,
   LoginMutation,
   { rejectValue: GlobalError }
 >("users/login", async (loginMutation, { rejectWithValue }) => {
   try {
-    const { data: user } = await axiosApi.post<User>(
+    const { data: data } = await axiosApi.post<RegisterResponse>(
       "/users/sessions",
       loginMutation
     );
-    return user;
+    return data;
   } catch (e) {
     if (isAxiosError(e) && e.response && e.response.status === 400) {
       return rejectWithValue(e.response.data);

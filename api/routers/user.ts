@@ -10,6 +10,8 @@ userRouter.post("/", async (req, res, next) => {
       username: req.body.username,
       password: req.body.password,
       confirmPassword: req.body.confirmPassword,
+      displayName: req.body.displayName,
+      phoneNumber: req.body.phoneNumber,
     });
     user.generateToken();
     await user.save();

@@ -24,8 +24,8 @@ const Register = () => {
     username: "",
     password: "",
     confirmPassword: "",
-    displauName: "",
-    phoneNumber: "",
+    displayName: "",
+    phoneNumber: 0,
   });
 
   const getFieldError = (fieldName: string) => {
@@ -108,6 +108,31 @@ const Register = () => {
               onChange={inputChangeHandler}
               error={Boolean(getFieldError("confirmPassword"))}
               helperText={getFieldError("confirmPassword")}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              required
+              label="Отображаемое имя"
+              name="displayName"
+              autoComplete="new-display-name"
+              value={state.displayName}
+              onChange={inputChangeHandler}
+              error={Boolean(getFieldError("displayName"))}
+              helperText={getFieldError("displayName")}
+            />
+          </Grid>{" "}
+          <Grid item>
+            <TextField
+              required
+              label="Номер телефона"
+              name="phoneNumber"
+              type="number"
+              autoComplete="new-phone-number"
+              value={state.phoneNumber}
+              onChange={inputChangeHandler}
+              error={Boolean(getFieldError("phoneNumber"))}
+              helperText={getFieldError("phoneNumber")}
             />
           </Grid>
         </Grid>

@@ -1,13 +1,21 @@
 import React, { useState } from "react";
-import { Button, Grid, Menu, MenuItem, Typography } from "@mui/material";
+import { Button, Grid, Menu, MenuItem, Typography, styled } from "@mui/material";
 import { useAppDispatch } from "../../app/hooks";
 import { logout } from "../../features/users/usersThunks";
 import { User } from "../../types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface Props {
   user: User;
 }
+
+const Link = styled(NavLink)({
+  color: "#000",
+  textDecoration: "none",
+  "&:hover": {
+    color: "#000",
+  },
+});
 
 const UserMenu: React.FC<Props> = ({ user }) => {
   const dispatch = useAppDispatch();
@@ -29,7 +37,7 @@ const UserMenu: React.FC<Props> = ({ user }) => {
   return (
     <Grid item>
       <Button onClick={handleClick} color="inherit">
-        Привет,  {user.username} 
+        Привет,  {user.displayName} 
       </Button>
       <Menu open={isOpen} anchorEl={anchorEl} onClose={handleClose} keepMounted>
         <MenuItem>

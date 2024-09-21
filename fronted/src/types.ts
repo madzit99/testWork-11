@@ -3,7 +3,7 @@ export interface RegisterMutation {
   password: string;
   confirmPassword: string;
   phoneNumber: number;
-  displauName: string;
+  displayName: string;
 }
 
 export interface RegisterResponse {
@@ -20,8 +20,8 @@ export interface User {
   _id: string;
   username: string;
   token: string;
-  phoneNumber: number;
-  displauName: string;
+  phoneNumber: string;
+  displayName: string;
 }
 
 export interface ValidationError {
