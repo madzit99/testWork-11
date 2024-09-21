@@ -93,3 +93,5 @@ itemsRouter.delete("/:id", auth, async (req: RequestWithUser, res, next) => {
     return res.send("Product removed");
   } catch (error) {}
 });
+
+export default itemsRouter;
