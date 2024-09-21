@@ -40,3 +40,15 @@ export interface GlobalError {
   error: string;
 }
 
+export interface Item {
+  _id: string;
+  user: User;
+  title: string;
+  description: string;
+  category: {
+    _id: string;
+    title: string;
+  };
+  image: string;
+  price: number;
+}
